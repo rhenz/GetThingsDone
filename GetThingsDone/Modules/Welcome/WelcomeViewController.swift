@@ -11,7 +11,13 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Views
     
-    private var backgroundView = UIView()
+    private var backgroundView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .cyan
+        view.layer.cornerRadius = 6
+        return view
+    }()
     
     // MARK: - View Lifecycle
     
@@ -27,12 +33,9 @@ class WelcomeViewController: UIViewController {
 extension WelcomeViewController {
     private func setupViews() {
         // View Controller's View
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
         
         // Background View
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundView.backgroundColor = .cyan
-        backgroundView.layer.cornerRadius = 6
         view.addSubview(backgroundView)
         
         setupConstraints()
