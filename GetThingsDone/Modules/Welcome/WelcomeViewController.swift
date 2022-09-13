@@ -42,14 +42,14 @@ extension WelcomeViewController {
     }
     
     private func setupConstraints() {
-        let padding: CGFloat = 40
+        let padding: CGFloat = 20
         
         // Background View
         NSLayoutConstraint.activate([
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            backgroundView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
-            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -padding),
+            backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
         ])
     }
 }
