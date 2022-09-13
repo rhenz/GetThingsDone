@@ -11,10 +11,8 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Views
     
-    private var backgroundView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .cyan
+    private var backgroundView: GTDGradientView = {
+        let view = GTDGradientView()
         view.layer.cornerRadius = 6
         return view
     }()
