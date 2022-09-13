@@ -29,14 +29,9 @@ final class AppCoordinator: Coordinator {
     // MARK: -
     
     func start() {
-        let navVC = UINavigationController()
-        
-        let welcomeCoordinator = WelcomeCoordinator(navigationController: navVC)
+        let welcomeCoordinator = WelcomeCoordinator(window: window)
         childCoordinators.append(welcomeCoordinator)
         
         welcomeCoordinator.start()
-        
-        window.rootViewController = navVC
-        window.makeKeyAndVisible()
     }
 }

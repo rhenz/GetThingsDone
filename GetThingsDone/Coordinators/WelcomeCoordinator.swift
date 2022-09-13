@@ -12,17 +12,20 @@ final class WelcomeCoordinator: Coordinator {
     // MARK: - Properties
     
     private(set) var childCoordinators: [Coordinator] = []
-    private let navigationController: UINavigationController
+    private let window: UIWindow
     
     // MARK: - Init
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    
+    init(window: UIWindow) {
+        self.window = window
     }
     
     // MARK: -
     
     func start() {
         let welcomeViewController = WelcomeViewController()
-        navigationController.pushViewController(welcomeViewController, animated: false)
+        
+        window.rootViewController = welcomeViewController
+        window.makeKeyAndVisible()
     }
 }
