@@ -15,4 +15,11 @@ extension UIColor {
             green: CGFloat(green)/255,
             blue: CGFloat(blue)/255, alpha: 1)
     }
+    
+    convenience init(hex: Int) {
+        self.init(
+            red: (hex >> 16) & 0xFF,
+            green: (hex >> 8) & 0xFF,
+            blue: hex & 0xFF)
+    }
 }
