@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902AFAE28D0687200948173 /* GTDGradientView.swift */; };
+		C902AFB228D06C1400948173 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902AFB128D06C1400948173 /* UIColor+Extension.swift */; };
 		C928B0DE28C8B5D500A34CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B0DD28C8B5D500A34CF6 /* AppDelegate.swift */; };
 		C928B0E028C8B5D500A34CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B0DF28C8B5D500A34CF6 /* SceneDelegate.swift */; };
 		C928B0E828C8B5D500A34CF6 /* GetThingsDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C928B0E628C8B5D500A34CF6 /* GetThingsDone.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		C902AFAE28D0687200948173 /* GTDGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDGradientView.swift; sourceTree = "<group>"; };
+		C902AFB128D06C1400948173 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C928B0DA28C8B5D500A34CF6 /* GetThingsDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetThingsDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C928B0DD28C8B5D500A34CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C928B0DF28C8B5D500A34CF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C902AFB028D06BD200948173 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C902AFB128D06C1400948173 /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C928B0D128C8B5D500A34CF6 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C928B0F428C8B62900A34CF6 /* Application Delegates */,
+				C902AFB028D06BD200948173 /* Extensions */,
 				C902AFAD28D0686200948173 /* Views */,
 				C928B0FD28C8B8DC00A34CF6 /* Coordinators */,
 				C928B0F928C8B68E00A34CF6 /* Modules */,
@@ -224,6 +235,7 @@
 				C928B0FC28C8B83900A34CF6 /* TodoListViewController.swift in Sources */,
 				C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */,
 				C928B0E828C8B5D500A34CF6 /* GetThingsDone.xcdatamodeld in Sources */,
+				C902AFB228D06C1400948173 /* UIColor+Extension.swift in Sources */,
 				C928B0FF28C8B8E700A34CF6 /* AppCoordinator.swift in Sources */,
 				C928B10428C8C18C00A34CF6 /* WelcomeCoordinator.swift in Sources */,
 				C928B10228C8C14100A34CF6 /* WelcomeViewController.swift in Sources */,
