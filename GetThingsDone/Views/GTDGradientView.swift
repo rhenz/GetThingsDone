@@ -9,6 +9,13 @@ import UIKit
 
 final class GTDGradientView: UIView {
     
+    // MARK: - Properties
+    
+    private var colors: [CGColor] = [
+        UIColor.init(red: 100, green: 228, blue: 255).cgColor,
+        UIColor.init(red: 58, green: 123, blue: 213).cgColor,
+    ]
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -32,7 +39,7 @@ extension GTDGradientView {
         translatesAutoresizingMaskIntoConstraints = false
         
         if let layer = self.layer as? CAGradientLayer {
-            layer.colors = [UIColor.blue.cgColor, UIColor.gray.cgColor]
+            layer.colors = colors
             layer.locations = [0.0, 1.2]
         }
     }
