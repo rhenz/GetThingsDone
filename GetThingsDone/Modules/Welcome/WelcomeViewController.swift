@@ -17,6 +17,15 @@ class WelcomeViewController: UIViewController {
         return view
     }()
     
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "GET IT DONE"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        return label
+    }()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -36,6 +45,9 @@ extension WelcomeViewController {
         // Background View
         view.addSubview(backgroundView)
         
+        // Title Label
+        backgroundView.addSubview(titleLabel)
+        
         setupConstraints()
     }
     
@@ -48,6 +60,13 @@ extension WelcomeViewController {
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
             backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
+        ])
+        
+        // Title Label
+        let titleLabelTopPadding: CGFloat = 20
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: titleLabelTopPadding),
+            titleLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ])
     }
 }
