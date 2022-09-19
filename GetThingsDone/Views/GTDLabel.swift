@@ -20,12 +20,14 @@ class GTDLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(title: String, color: UIColor = .white, fontSize: CGFloat = 16) {
+    convenience init(title: String, color: UIColor = .white, fontSize: CGFloat = Styles.FontSize.regular) {
         self.init(frame: .zero)
         
         text = title
         textColor = color
-        font = .systemFont(ofSize: fontSize)
+        font = UIFont(
+            name: Styles.FontName.ralewayMedium,
+            size: fontSize)
     }
 }
 
@@ -34,6 +36,8 @@ class GTDLabel: UILabel {
 extension GTDLabel {
     private func commonInit() {
         textColor = .white
-        font = .systemFont(ofSize: 16)
+        font = UIFont(
+            name: Styles.FontName.ralewayMedium,
+            size: Styles.FontSize.regular)
     }
 }
