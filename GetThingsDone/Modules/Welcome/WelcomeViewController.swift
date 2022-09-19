@@ -17,12 +17,9 @@ class WelcomeViewController: UIViewController {
         return view
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
+    private let titleLabel: GTDLabel = {
+        let label = GTDLabel(title: "GET IT DONE", fontSize: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "GET IT DONE"
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
     
