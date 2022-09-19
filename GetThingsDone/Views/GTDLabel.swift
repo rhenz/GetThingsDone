@@ -9,6 +9,24 @@ import UIKit
 
 class GTDLabel: UILabel {
     
+    // MARK: - Types
+    enum FontWeight {
+        case regular
+        case medium
+        case bold
+        
+        var fontName: String {
+            switch self {
+            case .regular:
+                return Styles.FontName.ralewayRegular
+            case .medium:
+                return Styles.FontName.ralewayMedium
+            case .bold:
+                return Styles.FontName.ralewayBold
+            }
+        }
+    }
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -20,13 +38,19 @@ class GTDLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(title: String, color: UIColor = .white, fontSize: CGFloat = Styles.FontSize.regular) {
+    convenience init(
+        title: String,
+        color: UIColor = .white,
+        fontWeight: FontWeight = .regular,
+        fontSize: CGFloat = Styles.FontSize.regular)
+    {
         self.init(frame: .zero)
         
         text = title
         textColor = color
+        
         font = UIFont(
-            name: Styles.FontName.ralewayMedium,
+            name: fontWeight.fontName,
             size: fontSize)
     }
 }
