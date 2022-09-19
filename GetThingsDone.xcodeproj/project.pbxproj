@@ -22,6 +22,7 @@
 		C98FC8C028D8991700D3116D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BD28D8991700D3116D /* Raleway-Bold.ttf */; };
 		C98FC8C128D8991700D3116D /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BE28D8991700D3116D /* Raleway-Regular.ttf */; };
 		C98FC8C228D8991700D3116D /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BF28D8991700D3116D /* Raleway-Medium.ttf */; };
+		C98FC8C528D89AC700D3116D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC8C428D89AC700D3116D /* Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C98FC8BD28D8991700D3116D /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		C98FC8BE28D8991700D3116D /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		C98FC8BF28D8991700D3116D /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		C98FC8C428D89AC700D3116D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C928B0F428C8B62900A34CF6 /* Application Delegates */,
+				C98FC8C328D89AB000D3116D /* Configurations */,
 				C902AFB028D06BD200948173 /* Extensions */,
 				C902AFAD28D0686200948173 /* Views */,
 				C928B0FD28C8B8DC00A34CF6 /* Coordinators */,
@@ -182,6 +185,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		C98FC8C328D89AB000D3116D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				C98FC8C428D89AC700D3116D /* Styles.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98FC8C528D89AC700D3116D /* Styles.swift in Sources */,
 				C98FC8BB28D88AE100D3116D /* GTDLabel.swift in Sources */,
 				C928B0FC28C8B83900A34CF6 /* TodoListViewController.swift in Sources */,
 				C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */,
