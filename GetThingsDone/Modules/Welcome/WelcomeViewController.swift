@@ -18,7 +18,7 @@ class WelcomeViewController: UIViewController {
     }()
     
     private let titleLabel: GTDLabel = {
-        let label = GTDLabel(title: "GET IT DONE", fontSize: 24)
+        let label = GTDLabel(title: "GET IT DONE", fontSize: Styles.FontSize.largeTitle)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
