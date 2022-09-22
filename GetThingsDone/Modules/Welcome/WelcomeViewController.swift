@@ -27,11 +27,20 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
+    private let infoLabel: GTDLabel = {
+        let label = GTDLabel(
+            title: "WELCOME. GET THINGS DONE IS A TODO LIST. A DOPE TODO LIST!",
+            fontSize: Styles.FontSize.regular)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        return label
+    }()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
     }
 }
@@ -48,6 +57,9 @@ extension WelcomeViewController {
         
         // Title Label
         backgroundView.addSubview(titleLabel)
+        
+        // Info Label
+        backgroundView.addSubview(infoLabel)
         
         setupConstraints()
     }
@@ -68,6 +80,13 @@ extension WelcomeViewController {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: titleLabelTopPadding),
             titleLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
+        ])
+        
+        // Info Label
+        NSLayoutConstraint.activate([
+            infoLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            infoLabel.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
+            infoLabel.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
 }
