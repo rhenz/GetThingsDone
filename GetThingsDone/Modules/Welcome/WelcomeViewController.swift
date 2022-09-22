@@ -37,6 +37,15 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
+    private let copyrightLabel: GTDLabel = {
+        let label = GTDLabel(title: "© 2022 | JLCS",
+                             color: Styles.Color.copyright,
+                             fontSize: Styles.FontSize.small)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -60,6 +69,9 @@ extension WelcomeViewController {
         
         // Info Label
         backgroundView.addSubview(infoLabel)
+        
+        // Copyright Label
+        view.addSubview(copyrightLabel)
         
         setupConstraints()
     }
@@ -87,6 +99,12 @@ extension WelcomeViewController {
             infoLabel.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             infoLabel.centerYAnchor.constraint(equalTo: backgroundView.centerYAnchor),
             infoLabel.widthAnchor.constraint(equalToConstant: 300)
+        ])
+        
+        // Copyright Label
+        NSLayoutConstraint.activate([
+            copyrightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            copyrightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
 }
