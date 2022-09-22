@@ -20,7 +20,7 @@ final class GTDGradientView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -32,10 +32,10 @@ final class GTDGradientView: UIView {
     }
 }
 
-// MARK: -
+// MARK: - Setup UI
 
 extension GTDGradientView {
-    private func commonInit() {
+    private func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         
         if let layer = self.layer as? CAGradientLayer {

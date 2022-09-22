@@ -31,7 +31,7 @@ class GTDLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -55,10 +55,10 @@ class GTDLabel: UILabel {
     }
 }
 
-// MARK: - Helper Methods
+// MARK: - Setup UI
 
 extension GTDLabel {
-    private func commonInit() {
+    private func setupView() {
         textColor = .white
         font = UIFont(
             name: Styles.FontName.ralewayMedium,
