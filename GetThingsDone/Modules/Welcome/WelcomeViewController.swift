@@ -46,6 +46,12 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
+    private let letsGoButton: GTDButton = {
+        let button = GTDButton(title: "Let's Go!")
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -72,6 +78,9 @@ extension WelcomeViewController {
         
         // Copyright Label
         view.addSubview(copyrightLabel)
+        
+        // Let's Go Button
+        backgroundView.addSubview(letsGoButton)
         
         setupConstraints()
     }
@@ -105,6 +114,12 @@ extension WelcomeViewController {
         NSLayoutConstraint.activate([
             copyrightLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             copyrightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        // Let's Go Button
+        NSLayoutConstraint.activate([
+            letsGoButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -padding),
+            letsGoButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ])
     }
 }
