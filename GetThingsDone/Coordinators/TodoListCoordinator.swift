@@ -5,15 +5,22 @@
 //  Created by John Salvador on 9/23/22.
 //
 
-import Foundation
+import UIKit
 
 final class TodoListCoordinator: Coordinator {
     
     // MARK: -
     private(set) var childCoordinators: [Coordinator] = []
+    private weak var welcomeViewController: WelcomeViewController?
+    
+    // MARK: - Init
+    init(welcomeViewController: WelcomeViewController) {
+        self.welcomeViewController = welcomeViewController
+    }
     
     // MARK: -
     func start() {
-        
+        let todoListViewController = TodoListViewController()
+        welcomeViewController?.present(todoListViewController, animated: true)
     }
 }

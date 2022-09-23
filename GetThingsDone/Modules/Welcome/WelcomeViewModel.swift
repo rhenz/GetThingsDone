@@ -19,6 +19,6 @@ final class WelcomeViewModel {
     
     // MARK: - Methods
     func tappedNextButton() {
-        
+        coordinator.startTodoList()
     }
 }

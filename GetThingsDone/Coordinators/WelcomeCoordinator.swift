@@ -14,6 +14,8 @@ final class WelcomeCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private let window: UIWindow
     
+    private(set) var welcomeViewController: WelcomeViewController!
+    
     // MARK: - Init
     
     init(window: UIWindow) {
@@ -23,9 +25,14 @@ final class WelcomeCoordinator: Coordinator {
     // MARK: -
     
     func start() {
-        let welcomeViewController = WelcomeViewController()
-        
+        welcomeViewController = WelcomeViewController()
+        welcomeViewController.viewModel = WelcomeViewModel(coordinator: self)
         window.rootViewController = welcomeViewController
         window.makeKeyAndVisible()
+    }
+    
+    func startTodoList() {
+        let todoListCoordinator = TodoListCoordinator(welcomeViewController: welcomeViewController)
+        todoListCoordinator.start()
     }
 }

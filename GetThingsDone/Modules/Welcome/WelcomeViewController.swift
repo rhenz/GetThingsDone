@@ -53,6 +53,10 @@ class WelcomeViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Properties
+    
+    var viewModel: WelcomeViewModel!
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -137,5 +141,8 @@ extension WelcomeViewController {
                 sender.transform = .identity
             }
         }
+        
+        // Present next screen
+        viewModel.tappedNextButton()
     }
 }
