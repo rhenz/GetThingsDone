@@ -18,6 +18,7 @@
 		C928B0FF28C8B8E700A34CF6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B0FE28C8B8E700A34CF6 /* AppCoordinator.swift */; };
 		C928B10228C8C14100A34CF6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B10128C8C14100A34CF6 /* WelcomeViewController.swift */; };
 		C928B10428C8C18C00A34CF6 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B10328C8C18C00A34CF6 /* WelcomeCoordinator.swift */; };
+		C95B4A8928DDEFCE0059FA45 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B4A8828DDEFCE0059FA45 /* WelcomeViewModel.swift */; };
 		C98FC8BB28D88AE100D3116D /* GTDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC8BA28D88AE100D3116D /* GTDLabel.swift */; };
 		C98FC8C028D8991700D3116D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BD28D8991700D3116D /* Raleway-Bold.ttf */; };
 		C98FC8C128D8991700D3116D /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BE28D8991700D3116D /* Raleway-Regular.ttf */; };
@@ -40,6 +41,7 @@
 		C928B0FE28C8B8E700A34CF6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C928B10128C8C14100A34CF6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C928B10328C8C18C00A34CF6 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
+		C95B4A8828DDEFCE0059FA45 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		C98FC8BA28D88AE100D3116D /* GTDLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDLabel.swift; sourceTree = "<group>"; };
 		C98FC8BD28D8991700D3116D /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		C98FC8BE28D8991700D3116D /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C928B10128C8C14100A34CF6 /* WelcomeViewController.swift */,
+				C95B4A8828DDEFCE0059FA45 /* WelcomeViewModel.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				C98FC8C528D89AC700D3116D /* Styles.swift in Sources */,
 				C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */,
+				C95B4A8928DDEFCE0059FA45 /* WelcomeViewModel.swift in Sources */,
 				C98FC8BB28D88AE100D3116D /* GTDLabel.swift in Sources */,
 				C928B0FC28C8B83900A34CF6 /* TodoListViewController.swift in Sources */,
 				C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */,
