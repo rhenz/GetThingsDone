@@ -46,9 +46,10 @@ class WelcomeViewController: UIViewController {
         return label
     }()
     
-    private let letsGoButton: GTDButton = {
+    private(set) lazy var letsGoButton: GTDButton = {
         let button = GTDButton(title: "Let's Go!")
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -121,5 +122,20 @@ extension WelcomeViewController {
             letsGoButton.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -padding),
             letsGoButton.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ])
+    }
+}
+
+// MARK: - Actions
+
+extension WelcomeViewController {
+    @objc private func nextButtonTapped(_ sender: GTDButton) {
+        // Animate button
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.3) {
+                sender.transform = .identity
+            }
+        }
     }
 }
