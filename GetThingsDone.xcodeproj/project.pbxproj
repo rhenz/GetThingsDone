@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902AFAE28D0687200948173 /* GTDGradientView.swift */; };
 		C902AFB228D06C1400948173 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902AFB128D06C1400948173 /* UIColor+Extension.swift */; };
+		C928993F28DF565D003BC5B9 /* GTDHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */; };
 		C928B0DE28C8B5D500A34CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B0DD28C8B5D500A34CF6 /* AppDelegate.swift */; };
 		C928B0E028C8B5D500A34CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B0DF28C8B5D500A34CF6 /* SceneDelegate.swift */; };
 		C928B0E828C8B5D500A34CF6 /* GetThingsDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C928B0E628C8B5D500A34CF6 /* GetThingsDone.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		C902AFAE28D0687200948173 /* GTDGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDGradientView.swift; sourceTree = "<group>"; };
 		C902AFB128D06C1400948173 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDHeaderView.swift; sourceTree = "<group>"; };
 		C928B0DA28C8B5D500A34CF6 /* GetThingsDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetThingsDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C928B0DD28C8B5D500A34CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C928B0DF28C8B5D500A34CF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				C902AFAE28D0687200948173 /* GTDGradientView.swift */,
 				C98FC8BA28D88AE100D3116D /* GTDLabel.swift */,
 				C9BE490A28DC9546009795BB /* GTDButton.swift */,
+				C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				C928B10428C8C18C00A34CF6 /* WelcomeCoordinator.swift in Sources */,
 				C928B10228C8C14100A34CF6 /* WelcomeViewController.swift in Sources */,
 				C928B0DE28C8B5D500A34CF6 /* AppDelegate.swift in Sources */,
+				C928993F28DF565D003BC5B9 /* GTDHeaderView.swift in Sources */,
 				C928B0E028C8B5D500A34CF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
