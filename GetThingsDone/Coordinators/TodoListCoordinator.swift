@@ -21,6 +21,7 @@ final class TodoListCoordinator: Coordinator {
     // MARK: -
     func start() {
         let todoListViewController = TodoListViewController()
+        todoListViewController.modalPresentationStyle = .fullScreen
         welcomeViewController?.present(todoListViewController, animated: true)
     }
 }
