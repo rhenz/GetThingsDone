@@ -15,6 +15,7 @@ final class GTDHeaderView: UIView {
     // MARK: - Init
     init(frame: CGRect = .zero, title: String = "header title", subtitle: String = "header subtitle") {
         super.init(frame: frame)
+        setupView()
     }
     
     required init?(coder: NSCoder) {
