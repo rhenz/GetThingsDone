@@ -59,6 +59,7 @@ class GTDLabel: UILabel {
 
 extension GTDLabel {
     private func setupView() {
+        translatesAutoresizingMaskIntoConstraints = false
         textColor = .white
         font = UIFont(
             name: Styles.FontName.ralewayMedium,

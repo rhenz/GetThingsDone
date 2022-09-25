@@ -36,11 +36,9 @@ extension GTDHeaderView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubview(gradientView)
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = headerTitle
         addSubview(titleLabel)
         
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         subtitleLabel.text = subtitle
         subtitleLabel.font = subtitleLabel.font.withSize(Styles.FontSize.largeTitle)
         addSubview(subtitleLabel)

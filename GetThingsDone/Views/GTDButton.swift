@@ -31,6 +31,7 @@ class GTDButton: UIButton {
 extension GTDButton {
     
     private func setupView() {
+        translatesAutoresizingMaskIntoConstraints = false
         var container = AttributeContainer()
         container.font = UIFont(name: Styles.FontName.ralewayRegular,
                                 size: Styles.FontSize.regular)

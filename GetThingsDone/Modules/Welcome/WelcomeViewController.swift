@@ -23,7 +23,6 @@ class WelcomeViewController: UIViewController {
             fontWeight: .bold,
             fontSize: Styles.FontSize.largeTitle)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -32,7 +31,6 @@ class WelcomeViewController: UIViewController {
             title: "WELCOME. GET THINGS DONE IS A TODO LIST. A DOPE TODO LIST!",
             fontSize: Styles.FontSize.regular)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
     }()
@@ -42,13 +40,11 @@ class WelcomeViewController: UIViewController {
                              color: Styles.Color.copyright,
                              fontSize: Styles.FontSize.small)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private(set) lazy var letsGoButton: GTDButton = {
         let button = GTDButton(title: "Let's Go!")
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         return button
     }()
