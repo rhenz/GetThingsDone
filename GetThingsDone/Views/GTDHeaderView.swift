@@ -29,6 +29,7 @@ final class GTDHeaderView: UIView {
         
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -105,6 +106,13 @@ extension GTDHeaderView {
             addButton.bottomAnchor.constraint(equalTo: subtitleLabel.bottomAnchor),
             addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sidePadding)
         ])
+    }
+}
+
+// MARK: - Actions
+extension GTDHeaderView {
+    @objc private func addButtonPressed(_ sender: UIButton) {
+        delegate?.gtdHeaderView(self, didTapAddButton: sender)
     }
 }
 
