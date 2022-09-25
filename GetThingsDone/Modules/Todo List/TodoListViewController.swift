@@ -11,7 +11,7 @@ class TodoListViewController: UIViewController {
     
     // MARK: - Views
     
-    let header = GTDHeaderView(headerTitle: "Stuff to get done")
+    private let header = GTDHeaderView(headerTitle: "Stuff to get done")
 
     // MARK: - View Lifecycle
     
@@ -26,6 +26,8 @@ class TodoListViewController: UIViewController {
 extension TodoListViewController {
     private func setupViews() {
         view.backgroundColor = .white
+        
+        header.datasource = self
         view.addSubview(header)
         
         setupConstraints()
@@ -40,5 +42,12 @@ extension TodoListViewController {
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             header.heightAnchor.constraint(equalToConstant: headerHeight)
         ])
+    }
+}
+
+// MARK: - GTDHeader Datasource
+extension TodoListViewController: GTDHeaderViewDatasource {
+    func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, subtitleForLabel label: GTDLabel) -> String {
+        return "1 left"
     }
 }
