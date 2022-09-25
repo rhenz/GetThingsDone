@@ -68,10 +68,9 @@
 		C902AFAD28D0686200948173 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C902AFAE28D0687200948173 /* GTDGradientView.swift */,
-				C98FC8BA28D88AE100D3116D /* GTDLabel.swift */,
-				C9BE490A28DC9546009795BB /* GTDButton.swift */,
-				C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */,
+				C928994028E08F69003BC5B9 /* Views */,
+				C928994128E08F75003BC5B9 /* Labels */,
+				C928994228E08F7C003BC5B9 /* Buttons */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -82,6 +81,31 @@
 				C902AFB128D06C1400948173 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C928994028E08F69003BC5B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C902AFAE28D0687200948173 /* GTDGradientView.swift */,
+				C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C928994128E08F75003BC5B9 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				C98FC8BA28D88AE100D3116D /* GTDLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		C928994228E08F7C003BC5B9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE490A28DC9546009795BB /* GTDButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		C928B0D128C8B5D500A34CF6 = {
