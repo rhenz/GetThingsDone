@@ -24,8 +24,8 @@ final class GTDHeaderView: UIView {
     
     private(set) lazy var addButton: UIButton = {
         var configuration = UIButton.Configuration.plain()
-        configuration.baseForegroundColor = .white
         configuration.image = UIImage(systemName: "plus.app.fill")
+        configuration.contentInsets = .init(top: 10, leading: 10, bottom: 0, trailing: 10)
         
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
