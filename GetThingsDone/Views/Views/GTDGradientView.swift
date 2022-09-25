@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GTDGradientView: UIView {
+class GTDGradientView: UIView {
     
     // MARK: - Properties
     
