@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GTDHeaderViewDelegate: AnyObject {
+    func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, didTapAddButton button: UIButton)
+}
+
 protocol GTDHeaderViewDatasource: AnyObject {
     func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, subtitleForLabel label: GTDLabel) -> String
 }
@@ -29,6 +33,7 @@ final class GTDHeaderView: UIView {
     }()
     
     // MARK: - Properties
+    weak var delegate: GTDHeaderViewDelegate?
     weak var datasource: GTDHeaderViewDatasource? {
         didSet { updateSubtitle() }
     }
