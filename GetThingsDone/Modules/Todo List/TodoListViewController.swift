@@ -28,6 +28,7 @@ extension TodoListViewController {
         view.backgroundColor = .white
         
         header.datasource = self
+        header.delegate = self
         view.addSubview(header)
         
         setupConstraints()
@@ -49,5 +50,12 @@ extension TodoListViewController {
 extension TodoListViewController: GTDHeaderViewDatasource {
     func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, subtitleForLabel label: GTDLabel) -> String {
         return "1 left"
+    }
+}
+
+// MARK: - GTDHeader Delegate
+extension TodoListViewController: GTDHeaderViewDelegate {
+    func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, didTapAddButton button: UIButton) {
+        print("Did tap add button")
     }
 }
