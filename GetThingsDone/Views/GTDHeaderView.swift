@@ -18,6 +18,16 @@ final class GTDHeaderView: UIView {
     private let titleLabel = GTDLabel()
     private let subtitleLabel = GTDLabel()
     
+    private(set) lazy var addButton: UIButton = {
+        var configuration = UIButton.Configuration.plain()
+        configuration.baseForegroundColor = .white
+        configuration.image = UIImage(systemName: "plus.app.fill")
+        
+        let button = UIButton(configuration: configuration)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - Properties
     weak var datasource: GTDHeaderViewDatasource? {
         didSet { updateSubtitle() }
@@ -51,12 +61,14 @@ extension GTDHeaderView {
         subtitleLabel.font = subtitleLabel.font.withSize(Styles.FontSize.largeTitle)
         addSubview(subtitleLabel)
         
+        addSubview(addButton)
+        
         setupConstraints()
     }
     
     private func setupConstraints() {
         let padding: CGFloat = 10
-        let leftPadding: CGFloat = 20
+        let sidePadding: CGFloat = 20
         let subtitleWidth: CGFloat = 250
         let subtitleHeight: CGFloat = 25
         let titleAndSubtitlePadding: CGFloat = 4
@@ -78,9 +90,15 @@ extension GTDHeaderView {
         // Subtitle
         NSLayoutConstraint.activate([
             subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
-            subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leftPadding),
+            subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: sidePadding),
             subtitleLabel.widthAnchor.constraint(equalToConstant: subtitleWidth),
             subtitleLabel.heightAnchor.constraint(equalToConstant: subtitleHeight)
+        ])
+        
+        // Add Button
+        NSLayoutConstraint.activate([
+            addButton.bottomAnchor.constraint(equalTo: subtitleLabel.bottomAnchor),
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -sidePadding)
         ])
     }
 }
