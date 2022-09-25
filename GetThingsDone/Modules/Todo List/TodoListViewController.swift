@@ -11,7 +11,7 @@ class TodoListViewController: UIViewController {
     
     // MARK: - Views
     
-    let header = GTDHeaderView()
+    let header = GTDHeaderView(headerTitle: "Stuff to get done")
 
     // MARK: - View Lifecycle
     
