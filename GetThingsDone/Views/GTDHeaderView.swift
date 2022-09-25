@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GTDHeaderViewDatasource: AnyObject {
+    func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, subtitleForLabel label: GTDLabel) -> String
+}
+
 final class GTDHeaderView: UIView {
     
     // MARK: - Views
@@ -15,6 +19,10 @@ final class GTDHeaderView: UIView {
     private let subtitleLabel = GTDLabel()
     
     // MARK: - Properties
+    weak var datasource: GTDHeaderViewDatasource? {
+        didSet { updateSubtitle() }
+    }
+    
     let headerTitle: String
     var subtitle = ""
     
@@ -74,5 +82,12 @@ extension GTDHeaderView {
             subtitleLabel.widthAnchor.constraint(equalToConstant: subtitleWidth),
             subtitleLabel.heightAnchor.constraint(equalToConstant: subtitleHeight)
         ])
+    }
+}
+
+// MARK: - Datasource
+extension GTDHeaderView {
+    func updateSubtitle() {
+        subtitleLabel.text = datasource?.gtdHeaderView(self, subtitleForLabel: subtitleLabel)
     }
 }
