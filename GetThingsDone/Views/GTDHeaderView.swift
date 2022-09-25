@@ -51,6 +51,9 @@ extension GTDHeaderView {
     private func setupConstraints() {
         let padding: CGFloat = 10
         let leftPadding: CGFloat = 20
+        let subtitleWidth: CGFloat = 250
+        let subtitleHeight: CGFloat = 25
+        let titleAndSubtitlePadding: CGFloat = 4
         
         // Main
         NSLayoutConstraint.activate([
@@ -62,7 +65,7 @@ extension GTDHeaderView {
         
         // Title
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: -4),
+            titleLabel.bottomAnchor.constraint(equalTo: subtitleLabel.topAnchor, constant: -titleAndSubtitlePadding),
             titleLabel.leadingAnchor.constraint(equalTo: subtitleLabel.leadingAnchor)
         ])
         
@@ -70,8 +73,8 @@ extension GTDHeaderView {
         NSLayoutConstraint.activate([
             subtitleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -padding),
             subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leftPadding),
-            subtitleLabel.widthAnchor.constraint(equalToConstant: 250),
-            subtitleLabel.heightAnchor.constraint(equalToConstant: 25)
+            subtitleLabel.widthAnchor.constraint(equalToConstant: subtitleWidth),
+            subtitleLabel.heightAnchor.constraint(equalToConstant: subtitleHeight)
         ])
     }
 }
