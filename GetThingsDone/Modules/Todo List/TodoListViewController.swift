@@ -12,6 +12,7 @@ class TodoListViewController: UIViewController {
     // MARK: - Views
     
     private let header = GTDHeaderView(headerTitle: "Stuff to get done")
+    private let todoPopUpView = GTDTodoPopUpView()
 
     // MARK: - View Lifecycle
     
@@ -31,17 +32,27 @@ extension TodoListViewController {
         header.delegate = self
         view.addSubview(header)
         
+        view.addSubview(todoPopUpView)
+        
         setupConstraints()
     }
     
     private func setupConstraints() {
         let headerHeight: CGFloat = 120
         
+        // Header
         NSLayoutConstraint.activate([
             header.topAnchor.constraint(equalTo: view.topAnchor),
             header.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             header.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             header.heightAnchor.constraint(equalToConstant: headerHeight)
+        ])
+        
+        // Todo Popup
+        NSLayoutConstraint.activate([
+            todoPopUpView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            todoPopUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            todoPopUpView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 }

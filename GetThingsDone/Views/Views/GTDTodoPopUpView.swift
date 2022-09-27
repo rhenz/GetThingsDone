@@ -13,6 +13,7 @@ final class GTDTodoPopUpView: GTDGradientView {
     let cancelButton = GTDButton(title: "cancel", cornerStyle: .medium)
     let addButton = GTDButton(title: "add", cornerStyle: .medium)
     let textField = GTDTextField(placeholderTitle: "Add new todo item")
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
