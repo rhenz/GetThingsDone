@@ -7,12 +7,20 @@
 
 import UIKit
 
+protocol GTDTodoPopUpViewDelegate: AnyObject {
+    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton)
+    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapCancelButton addButton: UIButton)
+}
+
 final class GTDTodoPopUpView: GTDGradientView {
     
     // MARK: - Views
     let cancelButton = GTDButton(title: "cancel", cornerStyle: .medium)
     let addButton = GTDButton(title: "add", cornerStyle: .medium)
     let textField = GTDTextField(placeholderTitle: "Add new todo item")
+    
+    // MARK: - Properties
+    weak var delegate: GTDTodoPopUpViewDelegate?
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -39,6 +47,8 @@ extension GTDTodoPopUpView {
         clipsToBounds = true
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         addSubview(cancelButton)
         addSubview(addButton)
         
@@ -72,5 +82,16 @@ extension GTDTodoPopUpView {
             textField.leadingAnchor.constraint(equalTo: cancelButton.leadingAnchor),
             textField.trailingAnchor.constraint(equalTo: addButton.trailingAnchor)
         ])
+    }
+}
+
+// MARK: - Actions
+extension GTDTodoPopUpView {
+    @objc private func cancelButtonTapped(_ sender: UIButton) {
+        delegate?.gtdTodoPopUpView(self, didTapCancelButton: sender)
+    }
+    
+    @objc private func addButtonTapped(_ sender: UIButton) {
+        delegate?.gtdTodoPopUpView(self, didTapAddButton: sender)
     }
 }
