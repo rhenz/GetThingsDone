@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GTDTodoPopUpViewDelegate: AnyObject {
-    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton)
+    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton, todoTextField textField: UITextField)
     func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapCancelButton addButton: UIButton)
 }
 
@@ -21,6 +21,7 @@ final class GTDTodoPopUpView: GTDGradientView {
     
     // MARK: - Properties
     weak var delegate: GTDTodoPopUpViewDelegate?
+    private let addButtonDisableAlpha = 0.7
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -48,11 +49,15 @@ extension GTDTodoPopUpView {
         layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
-        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         addSubview(cancelButton)
+        
+        addButton.alpha = addButtonDisableAlpha
+        addButton.isUserInteractionEnabled = false
+        addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         addSubview(addButton)
         
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(textFieldUpdate), for: .editingChanged)
         addSubview(textField)
     }
     
@@ -95,6 +100,18 @@ extension GTDTodoPopUpView {
     }
     
     @objc private func addButtonTapped(_ sender: UIButton) {
-        delegate?.gtdTodoPopUpView(self, didTapAddButton: sender)
+        delegate?.gtdTodoPopUpView(self, didTapAddButton: sender, todoTextField: textField)
+    }
+    
+    @objc private func textFieldUpdate(_ sender: UITextField) {
+        if let text = sender.text, !text.isEmpty {
+            guard addButton.isUserInteractionEnabled == false else { return }
+            
+            addButton.isUserInteractionEnabled = true
+            addButton.alpha = 1
+        } else {
+            addButton.isUserInteractionEnabled = false
+            addButton.alpha = addButtonDisableAlpha
+        }
     }
 }
