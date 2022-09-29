@@ -23,6 +23,8 @@
 		C928B10428C8C18C00A34CF6 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928B10328C8C18C00A34CF6 /* WelcomeCoordinator.swift */; };
 		C95B4A8928DDEFCE0059FA45 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B4A8828DDEFCE0059FA45 /* WelcomeViewModel.swift */; };
 		C95B4A8B28DDF0980059FA45 /* TodoListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95B4A8A28DDF0980059FA45 /* TodoListCoordinator.swift */; };
+		C989BD2228E5F82900867B2B /* GetThingsDoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989BD2128E5F82900867B2B /* GetThingsDoneUITests.swift */; };
+		C989BD2428E5F82900867B2B /* GetThingsDoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989BD2328E5F82900867B2B /* GetThingsDoneUITestsLaunchTests.swift */; };
 		C98FC8BB28D88AE100D3116D /* GTDLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC8BA28D88AE100D3116D /* GTDLabel.swift */; };
 		C98FC8C028D8991700D3116D /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BD28D8991700D3116D /* Raleway-Bold.ttf */; };
 		C98FC8C128D8991700D3116D /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BE28D8991700D3116D /* Raleway-Regular.ttf */; };
@@ -30,6 +32,23 @@
 		C98FC8C528D89AC700D3116D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC8C428D89AC700D3116D /* Styles.swift */; };
 		C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE490A28DC9546009795BB /* GTDButton.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C989BD1428E5F47D00867B2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C928B0D228C8B5D500A34CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C928B0D928C8B5D500A34CF6;
+			remoteInfo = GetThingsDone;
+		};
+		C989BD2528E5F82900867B2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C928B0D228C8B5D500A34CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C928B0D928C8B5D500A34CF6;
+			remoteInfo = GetThingsDone;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C902AFAE28D0687200948173 /* GTDGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDGradientView.swift; sourceTree = "<group>"; };
@@ -50,6 +69,10 @@
 		C928B10328C8C18C00A34CF6 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		C95B4A8828DDEFCE0059FA45 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		C95B4A8A28DDF0980059FA45 /* TodoListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCoordinator.swift; sourceTree = "<group>"; };
+		C989BD1028E5F47D00867B2B /* GetThingsDoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetThingsDoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C989BD1F28E5F82900867B2B /* GetThingsDoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetThingsDoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C989BD2128E5F82900867B2B /* GetThingsDoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThingsDoneUITests.swift; sourceTree = "<group>"; };
+		C989BD2328E5F82900867B2B /* GetThingsDoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThingsDoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C98FC8BA28D88AE100D3116D /* GTDLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDLabel.swift; sourceTree = "<group>"; };
 		C98FC8BD28D8991700D3116D /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		C98FC8BE28D8991700D3116D /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
@@ -60,6 +83,20 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		C928B0D728C8B5D500A34CF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C989BD0D28E5F47D00867B2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C989BD1C28E5F82900867B2B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -126,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				C928B0DC28C8B5D500A34CF6 /* GetThingsDone */,
+				C989BD1128E5F47D00867B2B /* GetThingsDoneTests */,
+				C989BD2028E5F82900867B2B /* GetThingsDoneUITests */,
 				C928B0DB28C8B5D500A34CF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				C928B0DA28C8B5D500A34CF6 /* GetThingsDone.app */,
+				C989BD1028E5F47D00867B2B /* GetThingsDoneTests.xctest */,
+				C989BD1F28E5F82900867B2B /* GetThingsDoneUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +266,22 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		C989BD1128E5F47D00867B2B /* GetThingsDoneTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GetThingsDoneTests;
+			sourceTree = "<group>";
+		};
+		C989BD2028E5F82900867B2B /* GetThingsDoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C989BD2128E5F82900867B2B /* GetThingsDoneUITests.swift */,
+				C989BD2328E5F82900867B2B /* GetThingsDoneUITestsLaunchTests.swift */,
+			);
+			path = GetThingsDoneUITests;
+			sourceTree = "<group>";
+		};
 		C98FC8BC28D890B500D3116D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +320,42 @@
 			productReference = C928B0DA28C8B5D500A34CF6 /* GetThingsDone.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C989BD0F28E5F47D00867B2B /* GetThingsDoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C989BD1828E5F47D00867B2B /* Build configuration list for PBXNativeTarget "GetThingsDoneTests" */;
+			buildPhases = (
+				C989BD0C28E5F47D00867B2B /* Sources */,
+				C989BD0D28E5F47D00867B2B /* Frameworks */,
+				C989BD0E28E5F47D00867B2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C989BD1528E5F47D00867B2B /* PBXTargetDependency */,
+			);
+			name = GetThingsDoneTests;
+			productName = GetThingsDoneTests;
+			productReference = C989BD1028E5F47D00867B2B /* GetThingsDoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C989BD1E28E5F82900867B2B /* GetThingsDoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C989BD2728E5F82900867B2B /* Build configuration list for PBXNativeTarget "GetThingsDoneUITests" */;
+			buildPhases = (
+				C989BD1B28E5F82900867B2B /* Sources */,
+				C989BD1C28E5F82900867B2B /* Frameworks */,
+				C989BD1D28E5F82900867B2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C989BD2628E5F82900867B2B /* PBXTargetDependency */,
+			);
+			name = GetThingsDoneUITests;
+			productName = GetThingsDoneUITests;
+			productReference = C989BD1F28E5F82900867B2B /* GetThingsDoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -270,11 +363,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					C928B0D928C8B5D500A34CF6 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					C989BD0F28E5F47D00867B2B = {
+						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
+						TestTargetID = C928B0D928C8B5D500A34CF6;
+					};
+					C989BD1E28E5F82900867B2B = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = C928B0D928C8B5D500A34CF6;
 					};
 				};
 			};
@@ -292,6 +394,8 @@
 			projectRoot = "";
 			targets = (
 				C928B0D928C8B5D500A34CF6 /* GetThingsDone */,
+				C989BD0F28E5F47D00867B2B /* GetThingsDoneTests */,
+				C989BD1E28E5F82900867B2B /* GetThingsDoneUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +410,20 @@
 				C98FC8C228D8991700D3116D /* Raleway-Medium.ttf in Resources */,
 				C928B0EA28C8B5D600A34CF6 /* Assets.xcassets in Resources */,
 				C98FC8C128D8991700D3116D /* Raleway-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C989BD0E28E5F47D00867B2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C989BD1D28E5F82900867B2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +454,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C989BD0C28E5F47D00867B2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C989BD1B28E5F82900867B2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C989BD2428E5F82900867B2B /* GetThingsDoneUITestsLaunchTests.swift in Sources */,
+				C989BD2228E5F82900867B2B /* GetThingsDoneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C989BD1528E5F47D00867B2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C928B0D928C8B5D500A34CF6 /* GetThingsDone */;
+			targetProxy = C989BD1428E5F47D00867B2B /* PBXContainerItemProxy */;
+		};
+		C989BD2628E5F82900867B2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C928B0D928C8B5D500A34CF6 /* GetThingsDone */;
+			targetProxy = C989BD2528E5F82900867B2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C928B0EB28C8B5D600A34CF6 /* LaunchScreen.storyboard */ = {
@@ -520,6 +667,93 @@
 			};
 			name = Release;
 		};
+		C989BD1628E5F47D00867B2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jlcs.GetThingsDoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetThingsDone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GetThingsDone";
+			};
+			name = Debug;
+		};
+		C989BD1728E5F47D00867B2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jlcs.GetThingsDoneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GetThingsDone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GetThingsDone";
+			};
+			name = Release;
+		};
+		C989BD2828E5F82900867B2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jlcs.GetThingsDoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GetThingsDone;
+			};
+			name = Debug;
+		};
+		C989BD2928E5F82900867B2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jlcs.GetThingsDoneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GetThingsDone;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -537,6 +771,24 @@
 			buildConfigurations = (
 				C928B0F228C8B5D600A34CF6 /* Debug */,
 				C928B0F328C8B5D600A34CF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C989BD1828E5F47D00867B2B /* Build configuration list for PBXNativeTarget "GetThingsDoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C989BD1628E5F47D00867B2B /* Debug */,
+				C989BD1728E5F47D00867B2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C989BD2728E5F82900867B2B /* Build configuration list for PBXNativeTarget "GetThingsDoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C989BD2828E5F82900867B2B /* Debug */,
+				C989BD2928E5F82900867B2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
