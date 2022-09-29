@@ -45,6 +45,7 @@ extension TodoListViewController {
         header.delegate = self
         view.addSubview(header)
         
+        todoPopUpView.delegate = self
         view.addSubview(todoPopUpView)
         
         setupConstraints()
@@ -78,22 +79,21 @@ extension TodoListViewController {
            let keyboardDuration = sender.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber
         {
             let keyboardHeight = keyboardFrame.cgRectValue.height
-            animatePopUpViewIfNeeded(withDuration: keyboardDuration.doubleValue, keyboardHeight: -keyboardHeight)
+            animatePopUpViewIfNeeded(withDuration: keyboardDuration.doubleValue, bottomYPosition: -keyboardHeight)
         }
     }
     
     @objc func keyboardWillHide(sender: NSNotification) {
         if let keyboardDuration = sender.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber {
-            animatePopUpViewIfNeeded(withDuration: keyboardDuration.doubleValue, keyboardHeight: 0)
+            let popUpBottomYPosition = isTodoPopUpViewVisible ? 0 : todoPopUpView.bounds.height
+            animatePopUpViewIfNeeded(withDuration: keyboardDuration.doubleValue, bottomYPosition: popUpBottomYPosition)
         }
     }
     
-    func animatePopUpViewIfNeeded(withDuration duration: TimeInterval, keyboardHeight: CGFloat) {
-        if isTodoPopUpViewVisible {
-            todoPopUpViewBottomConstraint.constant = keyboardHeight
-            UIView.animate(withDuration: duration) {
-                self.view.layoutIfNeeded()
-            }
+    func animatePopUpViewIfNeeded(withDuration duration: TimeInterval, bottomYPosition: CGFloat) {
+        todoPopUpViewBottomConstraint.constant = bottomYPosition
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
         }
     }
 }
@@ -108,6 +108,25 @@ extension TodoListViewController: GTDHeaderViewDatasource {
 // MARK: - GTDHeader Delegate
 extension TodoListViewController: GTDHeaderViewDelegate {
     func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, didTapAddButton button: UIButton) {
-        print("Did tap add button")
+        // Show the popup
+        isTodoPopUpViewVisible = true
+        
+        // Show keyboard
+        todoPopUpView.textField.becomeFirstResponder()
+    }
+}
+
+// MARK: - GTDPopUpView Delegate
+extension TodoListViewController: GTDTodoPopUpViewDelegate {
+    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton) {
+        // Hide the popup and update the table view
+    }
+    
+    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapCancelButton addButton: UIButton) {
+        // Hide the popup
+        isTodoPopUpViewVisible = false
+        
+        // Hide keyboard
+        todoPopUpView.textField.resignFirstResponder()
     }
 }
