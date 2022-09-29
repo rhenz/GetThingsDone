@@ -88,6 +88,9 @@ extension GTDTodoPopUpView {
 // MARK: - Actions
 extension GTDTodoPopUpView {
     @objc private func cancelButtonTapped(_ sender: UIButton) {
+        // Empty the textfield
+        textField.text = ""
+        
         delegate?.gtdTodoPopUpView(self, didTapCancelButton: sender)
     }
     
