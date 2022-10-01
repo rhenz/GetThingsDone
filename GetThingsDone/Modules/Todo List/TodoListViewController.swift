@@ -118,8 +118,8 @@ extension TodoListViewController: GTDHeaderViewDelegate {
 
 // MARK: - GTDPopUpView Delegate
 extension TodoListViewController: GTDTodoPopUpViewDelegate {
-    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton) {
-        // Hide the popup and update the table view
+    func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton, todoTextField textField: UITextField) {
+        
     }
     
     func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapCancelButton addButton: UIButton) {
