@@ -14,6 +14,12 @@ class TodoListViewController: UIViewController {
     private let header = GTDHeaderView(headerTitle: "Stuff to get done")
     private let todoPopUpView = GTDTodoPopUpView()
     
+    private var backgroundView: GTDGradientView = {
+        let view = GTDGradientView()
+        view.layer.cornerRadius = 6
+        return view
+    }()
+    
     // MARK: - Properties
     private var isTodoPopUpViewVisible = true
     private var todoPopUpViewBottomConstraint = NSLayoutConstraint()
@@ -40,6 +46,7 @@ extension TodoListViewController {
 extension TodoListViewController {
     private func setupViews() {
         view.backgroundColor = .white
+        view.addSubview(backgroundView)
         
         header.datasource = self
         header.delegate = self
@@ -53,6 +60,7 @@ extension TodoListViewController {
     
     private func setupConstraints() {
         let headerHeight: CGFloat = 120
+        let padding: CGFloat = 20
         
         // Header
         NSLayoutConstraint.activate([
@@ -66,8 +74,16 @@ extension TodoListViewController {
         todoPopUpViewBottomConstraint = todoPopUpView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         NSLayoutConstraint.activate([
             todoPopUpViewBottomConstraint,
-            todoPopUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            todoPopUpView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            todoPopUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            todoPopUpView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
+        ])
+        
+        // Background View
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+            backgroundView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: padding),
+            backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }
