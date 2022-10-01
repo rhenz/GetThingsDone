@@ -71,7 +71,7 @@ extension TodoListViewController {
         ])
         
         // Todo Popup
-        todoPopUpViewBottomConstraint = todoPopUpView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        todoPopUpViewBottomConstraint = todoPopUpView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: todoPopUpView.intrinsicContentSize.height)
         NSLayoutConstraint.activate([
             todoPopUpViewBottomConstraint,
             todoPopUpView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
