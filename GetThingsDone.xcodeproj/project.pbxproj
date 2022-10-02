@@ -31,6 +31,7 @@
 		C98FC8C228D8991700D3116D /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98FC8BF28D8991700D3116D /* Raleway-Medium.ttf */; };
 		C98FC8C528D89AC700D3116D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC8C428D89AC700D3116D /* Styles.swift */; };
 		C9A7622028E8901B007AEAA5 /* GTDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7621F28E8901B007AEAA5 /* GTDTableView.swift */; };
+		C9A7622428E93A69007AEAA5 /* GTDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */; };
 		C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE490A28DC9546009795BB /* GTDButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		C98FC8BF28D8991700D3116D /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		C98FC8C428D89AC700D3116D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		C9A7621F28E8901B007AEAA5 /* GTDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDTableView.swift; sourceTree = "<group>"; };
+		C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDTableViewCell.swift; sourceTree = "<group>"; };
 		C9BE490A28DC9546009795BB /* GTDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				C928994128E08F75003BC5B9 /* Labels */,
 				C928994228E08F7C003BC5B9 /* Buttons */,
 				C9A7622128E89026007AEAA5 /* TableViews */,
+				C9A7622228E93A51007AEAA5 /* TableViewCells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +314,14 @@
 			path = TableViews;
 			sourceTree = "<group>";
 		};
+		C9A7622228E93A51007AEAA5 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -452,6 +463,7 @@
 				C928B0FC28C8B83900A34CF6 /* TodoListViewController.swift in Sources */,
 				C928994728E0970D003BC5B9 /* GTDTextField.swift in Sources */,
 				C928994428E0905E003BC5B9 /* GTDTodoPopUpView.swift in Sources */,
+				C9A7622428E93A69007AEAA5 /* GTDTableViewCell.swift in Sources */,
 				C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */,
 				C95B4A8B28DDF0980059FA45 /* TodoListCoordinator.swift in Sources */,
 				C928B0E828C8B5D500A34CF6 /* GetThingsDone.xcdatamodeld in Sources */,
