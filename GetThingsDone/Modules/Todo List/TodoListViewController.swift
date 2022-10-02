@@ -13,6 +13,7 @@ class TodoListViewController: UIViewController {
     
     private let header = GTDHeaderView(headerTitle: "Stuff to get done")
     private let todoPopUpView = GTDTodoPopUpView()
+    private let tableView = GTDTableView()
     
     private var backgroundView: GTDGradientView = {
         let view = GTDGradientView()
@@ -55,6 +56,9 @@ extension TodoListViewController {
         todoPopUpView.delegate = self
         view.addSubview(todoPopUpView)
         
+        tableView.dataSource = self
+        backgroundView.addSubview(tableView)
+        
         setupConstraints()
     }
     
@@ -84,6 +88,14 @@ extension TodoListViewController {
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             backgroundView.topAnchor.constraint(equalTo: header.bottomAnchor, constant: padding),
             backgroundView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+        // Table View
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: backgroundView.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor)
         ])
     }
 }
@@ -144,5 +156,17 @@ extension TodoListViewController: GTDTodoPopUpViewDelegate {
         
         // Hide keyboard
         todoPopUpView.textField.resignFirstResponder()
+    }
+}
+
+// MARK: - Table View Datasource
+extension TodoListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        return cell
     }
 }
