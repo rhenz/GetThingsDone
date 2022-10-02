@@ -25,5 +25,6 @@ enum Styles {
     
     enum Color {
         static let copyright = UIColor(white: 0.6, alpha: 0.5)
+        static let todoItemLabel = UIColor(white: 0.6, alpha: 0.8)
     }
 }
