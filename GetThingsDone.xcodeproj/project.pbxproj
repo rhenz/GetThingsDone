@@ -32,6 +32,7 @@
 		C98FC8C528D89AC700D3116D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FC8C428D89AC700D3116D /* Styles.swift */; };
 		C9A7622028E8901B007AEAA5 /* GTDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7621F28E8901B007AEAA5 /* GTDTableView.swift */; };
 		C9A7622428E93A69007AEAA5 /* GTDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */; };
+		C9A7622628E93EAB007AEAA5 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */; };
 		C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE490A28DC9546009795BB /* GTDButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		C98FC8C428D89AC700D3116D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		C9A7621F28E8901B007AEAA5 /* GTDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDTableView.swift; sourceTree = "<group>"; };
 		C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDTableViewCell.swift; sourceTree = "<group>"; };
+		C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		C9BE490A28DC9546009795BB /* GTDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				C902AFB128D06C1400948173 /* UIColor+Extension.swift */,
+				C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9A7622628E93EAB007AEAA5 /* UITableViewCell+Identifier.swift in Sources */,
 				C98FC8C528D89AC700D3116D /* Styles.swift in Sources */,
 				C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */,
 				C95B4A8928DDEFCE0059FA45 /* WelcomeViewModel.swift in Sources */,
