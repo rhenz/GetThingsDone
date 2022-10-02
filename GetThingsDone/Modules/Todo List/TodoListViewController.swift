@@ -49,16 +49,9 @@ extension TodoListViewController {
         view.backgroundColor = .white
         view.addSubview(backgroundView)
         
-        header.datasource = self
-        header.delegate = self
-        view.addSubview(header)
-        
-        todoPopUpView.delegate = self
-        view.addSubview(todoPopUpView)
-        
-        tableView.dataSource = self
-        backgroundView.addSubview(tableView)
-        
+        setupHeader()
+        setupTodoPopupView()
+        setupTableView()
         setupConstraints()
     }
     
@@ -97,6 +90,22 @@ extension TodoListViewController {
             tableView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor)
         ])
+    }
+    
+    private func setupHeader() {
+        header.datasource = self
+        header.delegate = self
+        view.addSubview(header)
+    }
+    
+    private func setupTodoPopupView() {
+        todoPopUpView.delegate = self
+        view.addSubview(todoPopUpView)
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        backgroundView.addSubview(tableView)
     }
 }
 
