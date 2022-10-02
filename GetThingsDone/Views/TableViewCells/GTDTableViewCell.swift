@@ -12,6 +12,7 @@ class GTDTableViewCell: UITableViewCell {
     // MARK: - Views
     var titleLabel = GTDLabel()
     private var todoItemView = UIView()
+    private var checkmarkView = CheckmarkView()
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -38,6 +39,8 @@ extension GTDTableViewCell {
         
         titleLabel.textColor = Styles.Color.todoItemLabel
         todoItemView.addSubview(titleLabel)
+            
+        todoItemView.addSubview(checkmarkView)
     }
     
     private func layout() {
@@ -58,8 +61,16 @@ extension GTDTableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: todoItemView.topAnchor, constant: labelPadding),
             titleLabel.leadingAnchor.constraint(equalTo: todoItemView.leadingAnchor, constant: labelPadding),
-            titleLabel.trailingAnchor.constraint(equalTo: todoItemView.trailingAnchor, constant: -labelPadding),
+            titleLabel.trailingAnchor.constraint(equalTo: checkmarkView.leadingAnchor, constant: -labelPadding),
             titleLabel.bottomAnchor.constraint(equalTo: todoItemView.bottomAnchor, constant: -labelPadding),
+        ])
+        
+        // Checkmark View
+        let checkmarkPadding: CGFloat = 5
+        checkmarkView.setContentHuggingPriority(.required, for: .horizontal)
+        NSLayoutConstraint.activate([
+            checkmarkView.rightAnchor.constraint(equalTo: todoItemView.rightAnchor, constant: -checkmarkPadding),
+            checkmarkView.centerYAnchor.constraint(equalTo: todoItemView.centerYAnchor)
         ])
     }
     
