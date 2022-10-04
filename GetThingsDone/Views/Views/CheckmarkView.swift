@@ -59,13 +59,16 @@ extension CheckmarkView {
     }
     
     private func updateCheckmarkImageView(_ check: Bool, animated: Bool = true) {
-        #warning("Add animation for setting the checkmark image")
         if check {
-            checkmarkImageView.image = UIImage(systemName: "checkmark")
-            checkmarkImageView.backgroundColor = .green
+            UIView.animate(withDuration: animated ? 0.5 : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
+                self.checkmarkImageView.image = UIImage(systemName: "checkmark")
+                self.checkmarkImageView.backgroundColor = .green
+            }
         } else {
-            checkmarkImageView.image = nil
-            checkmarkImageView.backgroundColor = .white
+            UIView.animate(withDuration: animated ? 0.5 : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut) {
+                self.checkmarkImageView.image = nil
+                self.checkmarkImageView.backgroundColor = .white
+            }
         }
     }
 }
@@ -74,6 +77,6 @@ extension CheckmarkView {
 extension CheckmarkView {
     func setCheck(_ check: Bool, animated: Bool = true) {
         isChecked = check
-        updateCheckmarkImageView(check)
+        updateCheckmarkImageView(check, animated: animated)
     }
 }
