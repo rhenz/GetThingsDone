@@ -24,6 +24,7 @@ class TodoListViewController: UIViewController {
     // MARK: - Properties
     private var isTodoPopUpViewVisible = true
     private var todoPopUpViewBottomConstraint = NSLayoutConstraint()
+    private let todoItems = TodoItem.createTestData()
 
     // MARK: - View Lifecycle
     
@@ -172,7 +173,7 @@ extension TodoListViewController: GTDTodoPopUpViewDelegate {
 // MARK: - Table View Datasource
 extension TodoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return todoItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -180,6 +181,7 @@ extension TodoListViewController: UITableViewDataSource {
             fatalError("Failed to dequeue GTDTableViewCell")
         }
         
+        cell.configure(withTodoItem: todoItems[indexPath.row])
         return cell
     }
 }
