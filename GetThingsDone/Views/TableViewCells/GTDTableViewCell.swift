@@ -68,6 +68,7 @@ extension GTDTableViewCell {
         // Checkmark View
         let checkmarkPadding: CGFloat = 5
         checkmarkView.setContentHuggingPriority(.required, for: .horizontal)
+        checkmarkView.setContentCompressionResistancePriority(.required, for: .horizontal)
         NSLayoutConstraint.activate([
             checkmarkView.rightAnchor.constraint(equalTo: todoItemView.rightAnchor, constant: -checkmarkPadding),
             checkmarkView.centerYAnchor.constraint(equalTo: todoItemView.centerYAnchor)
