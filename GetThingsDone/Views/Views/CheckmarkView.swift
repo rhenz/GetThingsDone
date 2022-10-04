@@ -54,14 +54,26 @@ extension CheckmarkView {
 // MARK: - Action
 extension CheckmarkView {
     @objc private func tapCheckmarkView(_ recognizer: UITapGestureRecognizer) {
-        if isChecked {
-            checkmarkImageView.image = nil
-            checkmarkImageView.backgroundColor = .white
-        } else {
+        isChecked.toggle()
+        updateCheckmarkImageView(isChecked)
+    }
+    
+    private func updateCheckmarkImageView(_ check: Bool, animated: Bool = true) {
+        #warning("Add animation for setting the checkmark image")
+        if check {
             checkmarkImageView.image = UIImage(systemName: "checkmark")
             checkmarkImageView.backgroundColor = .green
+        } else {
+            checkmarkImageView.image = nil
+            checkmarkImageView.backgroundColor = .white
         }
-        
-        isChecked.toggle()
+    }
+}
+
+// MARK: - Public Method
+extension CheckmarkView {
+    func setCheck(_ check: Bool, animated: Bool = true) {
+        isChecked = check
+        updateCheckmarkImageView(check)
     }
 }
