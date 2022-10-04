@@ -76,3 +76,11 @@ extension GTDTableViewCell {
     }
     
 }
+
+// MARK: - Public Method
+extension GTDTableViewCell {
+    func configure(withTodoItem todoItem: TodoItem) {
+        titleLabel.text = todoItem.title
+        checkmarkView.setCheck(todoItem.status)
+    }
+}
