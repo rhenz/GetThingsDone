@@ -35,6 +35,7 @@
 		C9A7622628E93EAB007AEAA5 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */; };
 		C9A7622828E979D2007AEAA5 /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */; };
 		C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE490A28DC9546009795BB /* GTDButton.swift */; };
+		C9F040CF28EC7B9D006CA963 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F040CE28EC7B9D006CA963 /* TodoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkView.swift; sourceTree = "<group>"; };
 		C9BE490A28DC9546009795BB /* GTDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDButton.swift; sourceTree = "<group>"; };
+		C9F040CE28EC7B9D006CA963 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				C928B0F428C8B62900A34CF6 /* Application Delegates */,
 				C98FC8C328D89AB000D3116D /* Configurations */,
 				C902AFB028D06BD200948173 /* Extensions */,
+				C9F040CD28EC7B92006CA963 /* Models */,
 				C902AFAD28D0686200948173 /* Views */,
 				C928B0FD28C8B8DC00A34CF6 /* Coordinators */,
 				C928B0F928C8B68E00A34CF6 /* Modules */,
@@ -326,6 +329,14 @@
 				C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C9F040CD28EC7B92006CA963 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9F040CE28EC7B9D006CA963 /* TodoItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,6 +489,7 @@
 				C902AFB228D06C1400948173 /* UIColor+Extension.swift in Sources */,
 				C928B0FF28C8B8E700A34CF6 /* AppCoordinator.swift in Sources */,
 				C928B10428C8C18C00A34CF6 /* WelcomeCoordinator.swift in Sources */,
+				C9F040CF28EC7B9D006CA963 /* TodoItem.swift in Sources */,
 				C928B10228C8C14100A34CF6 /* WelcomeViewController.swift in Sources */,
 				C928B0DE28C8B5D500A34CF6 /* AppDelegate.swift in Sources */,
 				C9A7622028E8901B007AEAA5 /* GTDTableView.swift in Sources */,
