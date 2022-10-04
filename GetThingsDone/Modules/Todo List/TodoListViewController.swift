@@ -105,6 +105,7 @@ extension TodoListViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.register(GTDTableViewCell.self, forCellReuseIdentifier: GTDTableViewCell.cellIdentifier)
         backgroundView.addSubview(tableView)
     }
 }
@@ -171,11 +172,14 @@ extension TodoListViewController: GTDTodoPopUpViewDelegate {
 // MARK: - Table View Datasource
 extension TodoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: GTDTableViewCell.cellIdentifier, for: indexPath) as? GTDTableViewCell else {
+            fatalError("Failed to dequeue GTDTableViewCell")
+        }
+        
         return cell
     }
 }
