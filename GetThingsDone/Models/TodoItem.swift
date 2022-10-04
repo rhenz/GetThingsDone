@@ -18,7 +18,7 @@ extension TodoItem {
     static func createTestData() -> [TodoItem] {
         [
             .init(title: "Cook Angela's favorite food", status: false),
-            .init(title: "Buy some baby food for Lucas", status: false),
+            .init(title: "Buy some baby food for Lucas", status: true),
             .init(title: "Fix the drainage", status: false)
         ]
     }
