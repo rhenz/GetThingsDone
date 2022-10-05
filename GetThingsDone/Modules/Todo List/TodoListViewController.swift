@@ -10,7 +10,7 @@ import UIKit
 class TodoListViewController: UIViewController {
     
     // MARK: - Types
-    enum TodoSection: Int, CaseIterable {
+    enum TodoSection: Int, CaseIterable, TableViewEnumeratable {
         case todo = 0
         case done
         
@@ -209,11 +209,7 @@ extension TodoListViewController: UITableViewDataSource {
 // MARK: - Table View Delegate
 extension TodoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            return TodoSectionTitleView(title: "to do")
-        } else {
-            return TodoSectionTitleView(title: "done")
-        }
-        
+        let section = TodoSection.get(section)
+        return TodoSectionTitleView(title: section.title)
     }
 }
