@@ -12,6 +12,7 @@ class CheckmarkView: UIView {
     // MARK: - Properties
     private var checkmarkImageView = UIImageView()
     private var isChecked: Bool = false
+    static var animationDuration = 0.3
     
     var didTap: (() -> Void)?
     
@@ -63,12 +64,12 @@ extension CheckmarkView {
     
     private func updateCheckmarkImageView(_ check: Bool, animated: Bool = true) {
         if check {
-            UIView.animate(withDuration: animated ? 0.5 : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
+            UIView.animate(withDuration: animated ? Self.animationDuration : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
                 self.checkmarkImageView.image = UIImage(systemName: "checkmark")
                 self.checkmarkImageView.backgroundColor = .green
             }
         } else {
-            UIView.animate(withDuration: animated ? 0.5 : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut) {
+            UIView.animate(withDuration: animated ? Self.animationDuration : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut) {
                 self.checkmarkImageView.image = nil
                 self.checkmarkImageView.backgroundColor = .white
             }
