@@ -36,6 +36,7 @@
 		C9A7622828E979D2007AEAA5 /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */; };
 		C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE490A28DC9546009795BB /* GTDButton.swift */; };
 		C9C6798B28EDC7BB0094A9B6 /* TodoSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6798A28EDC7BB0094A9B6 /* TodoSectionTitleView.swift */; };
+		C9C6798E28EDC80F0094A9B6 /* TableViewEnumeratable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6798D28EDC80F0094A9B6 /* TableViewEnumeratable.swift */; };
 		C9F040CF28EC7B9D006CA963 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F040CE28EC7B9D006CA963 /* TodoItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkView.swift; sourceTree = "<group>"; };
 		C9BE490A28DC9546009795BB /* GTDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDButton.swift; sourceTree = "<group>"; };
 		C9C6798A28EDC7BB0094A9B6 /* TodoSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSectionTitleView.swift; sourceTree = "<group>"; };
+		C9C6798D28EDC80F0094A9B6 /* TableViewEnumeratable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEnumeratable.swift; sourceTree = "<group>"; };
 		C9F040CE28EC7B9D006CA963 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 			children = (
 				C928B0F428C8B62900A34CF6 /* Application Delegates */,
 				C98FC8C328D89AB000D3116D /* Configurations */,
+				C9C6798C28EDC7F20094A9B6 /* Protocols */,
 				C902AFB028D06BD200948173 /* Extensions */,
 				C9F040CD28EC7B92006CA963 /* Models */,
 				C902AFAD28D0686200948173 /* Views */,
@@ -332,6 +335,14 @@
 				C9A7622328E93A69007AEAA5 /* GTDTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C9C6798C28EDC7F20094A9B6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C9C6798D28EDC80F0094A9B6 /* TableViewEnumeratable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		C9F040CD28EC7B92006CA963 /* Models */ = {
@@ -498,6 +509,7 @@
 				C928B0DE28C8B5D500A34CF6 /* AppDelegate.swift in Sources */,
 				C9A7622028E8901B007AEAA5 /* GTDTableView.swift in Sources */,
 				C928993F28DF565D003BC5B9 /* GTDHeaderView.swift in Sources */,
+				C9C6798E28EDC80F0094A9B6 /* TableViewEnumeratable.swift in Sources */,
 				C928B0E028C8B5D500A34CF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
