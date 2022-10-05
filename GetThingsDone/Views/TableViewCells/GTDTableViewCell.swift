@@ -46,7 +46,11 @@ extension GTDTableViewCell {
         
         titleLabel.textColor = Styles.Color.todoItemLabel
         todoItemView.addSubview(titleLabel)
-            
+        
+        checkmarkView.didTap = { [weak self] in
+            guard let self = self else { return }
+            self.delegate?.gtdTableViewCell(self, didTapCheckmarkView: self.checkmarkView)
+        }
         todoItemView.addSubview(checkmarkView)
     }
     
