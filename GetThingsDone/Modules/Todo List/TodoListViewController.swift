@@ -39,7 +39,7 @@ class TodoListViewController: UIViewController {
     // MARK: - Properties
     private var isTodoPopUpViewVisible = true
     private var todoPopUpViewBottomConstraint = NSLayoutConstraint()
-    private let todoItems = TodoItem.createTestData()
+    private var todoItems = TodoItem.createTestData()
 
     // MARK: - View Lifecycle
     
@@ -213,11 +213,11 @@ extension TodoListViewController: UITableViewDataSource {
         let section = TodoSection.get(indexPath.section)
         switch section {
         case .todo:
-            let todo = todoItems.filter { !$0.status }
-            cell.configure(withTodoItem: todo[indexPath.row])
+            let todos = todoItems.filter { !$0.status }
+            cell.configure(withTodoItem: todos[indexPath.row])
         case .done:
-            let todo = todoItems.filter { $0.status }
-            cell.configure(withTodoItem: todo[indexPath.row])
+            let todos = todoItems.filter { $0.status }
+            cell.configure(withTodoItem: todos[indexPath.row])
         }
         
         return cell
@@ -235,6 +235,28 @@ extension TodoListViewController: UITableViewDelegate {
 // MARK: - GTDTableViewCellDelegate
 extension TodoListViewController: GTDTableViewCellDelegate {
     func gtdTableViewCell(_ tableViewCell: GTDTableViewCell, didTapCheckmarkView checkmarkView: CheckmarkView) {
+        guard let indexPath = tableView.indexPath(for: tableViewCell) else {
+            fatalError("Invalid IndexPath")
+        }
+        
+        let section = TodoSection.get(indexPath.section)
+        switch section {
+        case .todo:
+            let selectedTodo = todoItems.filter { !$0.status }[indexPath.row]
+            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
+            todoItems[todoIndex].status.toggle()
+        case .done:
+            let selectedTodo = todoItems.filter { $0.status }[indexPath.row]
+            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
+            todoItems[todoIndex].status.toggle()
+        }
+        
+        // Reload table view
+        tableView.isUserInteractionEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + CheckmarkView.animationDuration) {
+            self.tableView.reloadData()
+            self.tableView.isUserInteractionEnabled = true
+        }
         
     }
 }
