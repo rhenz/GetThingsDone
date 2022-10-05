@@ -208,6 +208,8 @@ extension TodoListViewController: UITableViewDataSource {
             fatalError("Failed to dequeue GTDTableViewCell")
         }
         
+        cell.delegate = self
+        
         let section = TodoSection.get(indexPath.section)
         switch section {
         case .todo:
@@ -227,5 +229,12 @@ extension TodoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let section = TodoSection.get(section)
         return TodoSectionTitleView(title: section.title)
+    }
+}
+
+// MARK: - GTDTableViewCellDelegate
+extension TodoListViewController: GTDTableViewCellDelegate {
+    func gtdTableViewCell(_ tableViewCell: GTDTableViewCell, didTapCheckmarkView checkmarkView: CheckmarkView) {
+        
     }
 }
