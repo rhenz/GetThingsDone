@@ -189,7 +189,14 @@ extension TodoListViewController: GTDTodoPopUpViewDelegate {
 // MARK: - Table View Datasource
 extension TodoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoItems.count
+        let section = TodoSection.get(section)
+        
+        switch section {
+        case .todo:
+            return todoItems.filter { !$0.status }.count
+        case .done:
+            return todoItems.filter { $0.status }.count
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -201,7 +208,16 @@ extension TodoListViewController: UITableViewDataSource {
             fatalError("Failed to dequeue GTDTableViewCell")
         }
         
-        cell.configure(withTodoItem: todoItems[indexPath.row])
+        let section = TodoSection.get(indexPath.section)
+        switch section {
+        case .todo:
+            let todo = todoItems.filter { !$0.status }
+            cell.configure(withTodoItem: todo[indexPath.row])
+        case .done:
+            let todo = todoItems.filter { $0.status }
+            cell.configure(withTodoItem: todo[indexPath.row])
+        }
+        
         return cell
     }
 }
