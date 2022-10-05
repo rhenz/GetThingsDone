@@ -35,6 +35,7 @@
 		C9A7622628E93EAB007AEAA5 /* UITableViewCell+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */; };
 		C9A7622828E979D2007AEAA5 /* CheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */; };
 		C9BE490B28DC9546009795BB /* GTDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE490A28DC9546009795BB /* GTDButton.swift */; };
+		C9C6798B28EDC7BB0094A9B6 /* TodoSectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C6798A28EDC7BB0094A9B6 /* TodoSectionTitleView.swift */; };
 		C9F040CF28EC7B9D006CA963 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F040CE28EC7B9D006CA963 /* TodoItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		C9A7622528E93EAB007AEAA5 /* UITableViewCell+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Identifier.swift"; sourceTree = "<group>"; };
 		C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckmarkView.swift; sourceTree = "<group>"; };
 		C9BE490A28DC9546009795BB /* GTDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDButton.swift; sourceTree = "<group>"; };
+		C9C6798A28EDC7BB0094A9B6 /* TodoSectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoSectionTitleView.swift; sourceTree = "<group>"; };
 		C9F040CE28EC7B9D006CA963 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				C928994328E0905E003BC5B9 /* GTDTodoPopUpView.swift */,
 				C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */,
 				C9A7622728E979D2007AEAA5 /* CheckmarkView.swift */,
+				C9C6798A28EDC7BB0094A9B6 /* TodoSectionTitleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				C928994728E0970D003BC5B9 /* GTDTextField.swift in Sources */,
 				C9A7622828E979D2007AEAA5 /* CheckmarkView.swift in Sources */,
 				C928994428E0905E003BC5B9 /* GTDTodoPopUpView.swift in Sources */,
+				C9C6798B28EDC7BB0094A9B6 /* TodoSectionTitleView.swift in Sources */,
 				C9A7622428E93A69007AEAA5 /* GTDTableViewCell.swift in Sources */,
 				C902AFAF28D0687200948173 /* GTDGradientView.swift in Sources */,
 				C95B4A8B28DDF0980059FA45 /* TodoListCoordinator.swift in Sources */,
