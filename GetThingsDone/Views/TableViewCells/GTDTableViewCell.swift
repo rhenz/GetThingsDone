@@ -7,12 +7,19 @@
 
 import UIKit
 
+protocol GTDTableViewCellDelegate: AnyObject {
+    func gtdTableViewCell(_ tableViewCell: GTDTableViewCell, didTapCheckmarkView checkmarkView: CheckmarkView)
+}
+
 class GTDTableViewCell: UITableViewCell {
     
     // MARK: - Views
     var titleLabel = GTDLabel()
     private var todoItemView = UIView()
     private var checkmarkView = CheckmarkView()
+    
+    // MARK: - Properties
+    weak var delegate: GTDTableViewCellDelegate?
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
