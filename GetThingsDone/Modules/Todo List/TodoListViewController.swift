@@ -9,6 +9,21 @@ import UIKit
 
 class TodoListViewController: UIViewController {
     
+    // MARK: - Types
+    enum TodoSection: Int, CaseIterable {
+        case todo = 0
+        case done
+        
+        var title: String {
+            switch self {
+            case .todo:
+                return "to do"
+            case .done:
+                return "done"
+            }
+        }
+    }
+    
     // MARK: - Views
     
     private let header = GTDHeaderView(headerTitle: "Stuff to get done")
@@ -106,6 +121,7 @@ extension TodoListViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(GTDTableViewCell.self, forCellReuseIdentifier: GTDTableViewCell.cellIdentifier)
         backgroundView.addSubview(tableView)
     }
@@ -176,6 +192,10 @@ extension TodoListViewController: UITableViewDataSource {
         return todoItems.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return TodoSection.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GTDTableViewCell.cellIdentifier, for: indexPath) as? GTDTableViewCell else {
             fatalError("Failed to dequeue GTDTableViewCell")
@@ -183,5 +203,55 @@ extension TodoListViewController: UITableViewDataSource {
         
         cell.configure(withTodoItem: todoItems[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - Table View Delegate
+extension TodoListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return TodoSectionTitleView(title: "to do")
+        } else {
+            return TodoSectionTitleView(title: "done")
+        }
+        
+    }
+}
+
+class TodoSectionTitleView: UIView {
+    
+    // MARK: - Properties
+    let title: String
+    private var titleLabel: GTDLabel!
+    
+    // MARK: - Init
+    init(title: String) {
+        self.title = title
+        super.init(frame: .zero)
+        
+        style()
+        layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - Setup UI
+extension TodoSectionTitleView {
+    private func style() {
+        titleLabel = GTDLabel(title: title, fontSize: 20)
+        addSubview(titleLabel)
+    }
+    
+    private func layout() {
+        let leftPadding: CGFloat = 15
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: leftPadding),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
