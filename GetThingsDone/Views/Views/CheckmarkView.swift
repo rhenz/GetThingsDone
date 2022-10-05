@@ -13,6 +13,8 @@ class CheckmarkView: UIView {
     private var checkmarkImageView = UIImageView()
     private var isChecked: Bool = false
     
+    var didTap: (() -> Void)?
+    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,6 +58,7 @@ extension CheckmarkView {
     @objc private func tapCheckmarkView(_ recognizer: UITapGestureRecognizer) {
         isChecked.toggle()
         updateCheckmarkImageView(isChecked)
+        didTap?()
     }
     
     private func updateCheckmarkImageView(_ check: Bool, animated: Bool = true) {
