@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 struct TodoItem: Identifiable, Equatable {
     var id: UUID = UUID()
     var title: String
@@ -24,3 +25,4 @@ extension TodoItem {
         ]
     }
 }
+*/
