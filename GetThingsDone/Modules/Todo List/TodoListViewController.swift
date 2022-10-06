@@ -157,7 +157,16 @@ extension TodoListViewController {
 // MARK: - GTDHeader Datasource
 extension TodoListViewController: GTDHeaderViewDatasource {
     func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, subtitleForLabel label: GTDLabel) -> String {
-        return "1 left"
+        let itemLeftCount = todoItems.filter { !$0.status }.count
+        var subtitle: String
+        
+        if itemLeftCount > 0 {
+            subtitle = "\(itemLeftCount) left"
+        } else {
+            subtitle = "You don't have any remaining todos left."
+        }
+        
+        return subtitle
     }
 }
 
@@ -256,6 +265,7 @@ extension TodoListViewController: GTDTableViewCellDelegate {
         tableView.isUserInteractionEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + CheckmarkView.animationDuration) {
             self.tableView.reloadData()
+            self.header.updateSubtitle()
             self.tableView.isUserInteractionEnabled = true
         }
         
