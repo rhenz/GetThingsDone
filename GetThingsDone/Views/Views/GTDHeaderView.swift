@@ -66,6 +66,7 @@ extension GTDHeaderView {
         
         subtitleLabel.text = subtitle
         subtitleLabel.font = subtitleLabel.font.withSize(Styles.FontSize.largeTitle)
+        subtitleLabel.adjustsFontSizeToFitWidth = true
         addSubview(subtitleLabel)
         
         addSubview(addButton)
