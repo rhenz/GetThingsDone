@@ -66,12 +66,12 @@ extension CheckmarkView {
         if check {
             UIView.animate(withDuration: animated ? Self.animationDuration : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseIn) {
                 self.checkmarkImageView.image = UIImage(systemName: "checkmark")
-                self.checkmarkImageView.backgroundColor = .green
+//                self.checkmarkImageView.backgroundColor = .green
             }
         } else {
             UIView.animate(withDuration: animated ? Self.animationDuration : 0, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: .curveEaseOut) {
                 self.checkmarkImageView.image = nil
-                self.checkmarkImageView.backgroundColor = .white
+//                self.checkmarkImageView.backgroundColor = .white
             }
         }
     }
