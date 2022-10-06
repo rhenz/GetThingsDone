@@ -11,6 +11,7 @@
 		C902AFB228D06C1400948173 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C902AFB128D06C1400948173 /* UIColor+Extension.swift */; };
 		C9201EE628EF30B900DCC859 /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9201EE428EF30B900DCC859 /* TodoItem+CoreDataClass.swift */; };
 		C9201EE728EF30B900DCC859 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9201EE528EF30B900DCC859 /* TodoItem+CoreDataProperties.swift */; };
+		C9201EEA28EF32FF00DCC859 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9201EE928EF32FF00DCC859 /* CoreDataManager.swift */; };
 		C928993F28DF565D003BC5B9 /* GTDHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */; };
 		C928994428E0905E003BC5B9 /* GTDTodoPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928994328E0905E003BC5B9 /* GTDTodoPopUpView.swift */; };
 		C928994728E0970D003BC5B9 /* GTDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928994628E0970D003BC5B9 /* GTDTextField.swift */; };
@@ -64,6 +65,7 @@
 		C902AFB128D06C1400948173 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C9201EE428EF30B900DCC859 /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C9201EE528EF30B900DCC859 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9201EE928EF32FF00DCC859 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C928993E28DF565D003BC5B9 /* GTDHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDHeaderView.swift; sourceTree = "<group>"; };
 		C928994328E0905E003BC5B9 /* GTDTodoPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDTodoPopUpView.swift; sourceTree = "<group>"; };
 		C928994628E0970D003BC5B9 /* GTDTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTDTextField.swift; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C9201EE828EF32EF00DCC859 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C9201EE928EF32FF00DCC859 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C928994028E08F69003BC5B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 				C98FC8C328D89AB000D3116D /* Configurations */,
 				C9C6798C28EDC7F20094A9B6 /* Protocols */,
 				C902AFB028D06BD200948173 /* Extensions */,
+				C9201EE828EF32EF00DCC859 /* Managers */,
 				C9F040CD28EC7B92006CA963 /* Models */,
 				C902AFAD28D0686200948173 /* Views */,
 				C928B0FD28C8B8DC00A34CF6 /* Coordinators */,
@@ -499,6 +510,7 @@
 				C95B4A8928DDEFCE0059FA45 /* WelcomeViewModel.swift in Sources */,
 				C98FC8BB28D88AE100D3116D /* GTDLabel.swift in Sources */,
 				C928B0FC28C8B83900A34CF6 /* TodoListViewController.swift in Sources */,
+				C9201EEA28EF32FF00DCC859 /* CoreDataManager.swift in Sources */,
 				C928994728E0970D003BC5B9 /* GTDTextField.swift in Sources */,
 				C9A7622828E979D2007AEAA5 /* CheckmarkView.swift in Sources */,
 				C928994428E0905E003BC5B9 /* GTDTodoPopUpView.swift in Sources */,
