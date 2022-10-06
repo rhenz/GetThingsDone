@@ -40,6 +40,7 @@ class TodoListViewController: UIViewController {
     private var isTodoPopUpViewVisible = true
     private var todoPopUpViewBottomConstraint = NSLayoutConstraint()
     private var todoItems = TodoItem.createTestData()
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 
     // MARK: - View Lifecycle
     
