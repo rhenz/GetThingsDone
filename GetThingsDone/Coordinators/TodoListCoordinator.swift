@@ -20,7 +20,7 @@ final class TodoListCoordinator: Coordinator {
     
     // MARK: -
     func start() {
-        let todoListViewController = TodoListViewController()
+        let todoListViewController = TodoListViewController(viewModel: TodoListViewModel())
         todoListViewController.modalPresentationStyle = .fullScreen
         welcomeViewController?.present(todoListViewController, animated: true)
     }

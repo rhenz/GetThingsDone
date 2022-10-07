@@ -37,16 +37,21 @@ class TodoListViewController: UIViewController {
     }()
     
     // MARK: - Properties
+    private var viewModel: TodoListViewModel
     private var isTodoPopUpViewVisible = true
     private var todoPopUpViewBottomConstraint = NSLayoutConstraint()
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
     
-    private(set) lazy var todoItems: [TodoItem] = {
-        // First timer, add test data.
-        // If core data not empty, use it
-        return []
-    }()
-
+    // MARK: - Init
+    init(viewModel: TodoListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
@@ -162,15 +167,12 @@ extension TodoListViewController {
 // MARK: - GTDHeader Datasource
 extension TodoListViewController: GTDHeaderViewDatasource {
     func gtdHeaderView(_ gtdHeaderView: GTDHeaderView, subtitleForLabel label: GTDLabel) -> String {
-        let itemLeftCount = todoItems.filter { !$0.status }.count
         var subtitle: String
-        
-        if itemLeftCount > 0 {
-            subtitle = "\(itemLeftCount) left"
+        if viewModel.itemsLeftCount > 0 {
+            subtitle = "\(viewModel.itemsLeftCount) left"
         } else {
             subtitle = "You don't have any remaining todos left."
         }
-        
         return subtitle
     }
 }
@@ -208,9 +210,9 @@ extension TodoListViewController: UITableViewDataSource {
         
         switch section {
         case .todo:
-            return todoItems.filter { !$0.status }.count
+            return viewModel.todos.count
         case .done:
-            return todoItems.filter { $0.status }.count
+            return viewModel.doneTodos.count
         }
     }
     
@@ -228,11 +230,9 @@ extension TodoListViewController: UITableViewDataSource {
         let section = TodoSection.get(indexPath.section)
         switch section {
         case .todo:
-            let todos = todoItems.filter { !$0.status }
-            cell.configure(withTodoItem: todos[indexPath.row])
+            cell.configure(withTodoItem: viewModel.todos[indexPath.row])
         case .done:
-            let todos = todoItems.filter { $0.status }
-            cell.configure(withTodoItem: todos[indexPath.row])
+            cell.configure(withTodoItem: viewModel.doneTodos[indexPath.row])
         }
         
         return cell
@@ -257,13 +257,15 @@ extension TodoListViewController: GTDTableViewCellDelegate {
         let section = TodoSection.get(indexPath.section)
         switch section {
         case .todo:
-            let selectedTodo = todoItems.filter { !$0.status }[indexPath.row]
-            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
-            todoItems[todoIndex].status.toggle()
+//            let selectedTodo = todoItems.filter { !$0.status }[indexPath.row]
+//            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
+//            todoItems[todoIndex].status.toggle()
+            break
         case .done:
-            let selectedTodo = todoItems.filter { $0.status }[indexPath.row]
-            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
-            todoItems[todoIndex].status.toggle()
+//            let selectedTodo = todoItems.filter { $0.status }[indexPath.row]
+//            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
+//            todoItems[todoIndex].status.toggle()
+            break
         }
         
         // Reload table view
