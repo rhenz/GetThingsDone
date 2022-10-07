@@ -33,4 +33,16 @@ final class TodoListViewModel {
     func fetchTodoItems() {
         // Fetch todo items from core data
     }
+    
+    func updateTodo(at index: Int) {
+        let selectedTodo = todos[index]
+        let todoIndex = allTodoItems.firstIndex(of: selectedTodo)!
+        allTodoItems[todoIndex].status.toggle()
+    }
+    
+    func updateDoneTodo(at index: Int) {
+        let selectedTodo = doneTodos[index]
+        let todoIndex = allTodoItems.firstIndex(of: selectedTodo)!
+        allTodoItems[todoIndex].status.toggle()
+    }
 }
