@@ -257,15 +257,9 @@ extension TodoListViewController: GTDTableViewCellDelegate {
         let section = TodoSection.get(indexPath.section)
         switch section {
         case .todo:
-//            let selectedTodo = todoItems.filter { !$0.status }[indexPath.row]
-//            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
-//            todoItems[todoIndex].status.toggle()
-            break
+            viewModel.updateTodo(at: indexPath.row)
         case .done:
-//            let selectedTodo = todoItems.filter { $0.status }[indexPath.row]
-//            let todoIndex = todoItems.firstIndex(of: selectedTodo)!
-//            todoItems[todoIndex].status.toggle()
-            break
+            viewModel.updateDoneTodo(at: indexPath.row)
         }
         
         // Reload table view
