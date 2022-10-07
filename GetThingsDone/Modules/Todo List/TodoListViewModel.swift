@@ -14,7 +14,7 @@ final class TodoListViewModel {
     
     // MARK: - Init
     init() {
-        self.allTodoItems = TodoItem.createTestData()
+        allTodoItems = TodoItem.createTestData()
     }
     
     // MARK: - Public API
@@ -30,11 +30,7 @@ final class TodoListViewModel {
         allTodoItems.filter { $0.status }
     }
     
-    func createTestData() {
-        
-    }
-    
     func fetchTodoItems() {
-        
+        // Fetch todo items from core data
     }
 }
