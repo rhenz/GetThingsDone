@@ -13,6 +13,11 @@ final class CoreDataManager {
     // MARK: - Shared
     static let shared = CoreDataManager()
     
+    // MARK: - Properties
+    private var context: NSManagedObjectContext {
+        persistentContainer.viewContext
+    }
+    
     // MARK: - Init
     private init() { }
     
@@ -39,6 +44,25 @@ final class CoreDataManager {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+}
+
+// MARK: -
+enum FetchTodoItemsResult {
+    case success([TodoItem])
+    case failure(Error)
+}
+
+extension CoreDataManager {
+    func fetchAllTodoItems(completion: @escaping (FetchTodoItemsResult) -> Void) {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "TodoItem")
+        
+        do {
+            let todoItems = try context.fetch(fetchRequest) as! [TodoItem]
+            completion(.success(todoItems))
+        } catch {
+            print("Failed fetching todo items in context: \(context)")
         }
     }
 }
