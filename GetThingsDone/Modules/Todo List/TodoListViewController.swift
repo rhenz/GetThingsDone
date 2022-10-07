@@ -39,8 +39,13 @@ class TodoListViewController: UIViewController {
     // MARK: - Properties
     private var isTodoPopUpViewVisible = true
     private var todoPopUpViewBottomConstraint = NSLayoutConstraint()
-    private var todoItems = TodoItem.createTestData()
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+    
+    private(set) lazy var todoItems: [TodoItem] = {
+        // First timer, add test data.
+        // If core data not empty, use it
+        return []
+    }()
 
     // MARK: - View Lifecycle
     
