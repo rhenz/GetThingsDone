@@ -10,11 +10,30 @@ import Foundation
 final class TodoListViewModel {
     
     // MARK: - Properties
-    private var allTodoItems: [TodoItem]
+    private var allTodoItems: [TodoItem] = []
+    private var hasAddedTodoItemTestData: Bool {
+        get { UserDefaults.standard.bool(forKey: "hasAddedTodoItemTestData") }
+        set { UserDefaults.standard.set(newValue, forKey: "hasAddedTodoItemTestData") }
+    }
     
     // MARK: - Init
     init() {
-        allTodoItems = TodoItem.createTestData()
+        // Check if test data has been added for the first time
+        // if not, check core data for any items
+        if !self.hasAddedTodoItemTestData {
+            allTodoItems = TodoItem.createTestData()
+            hasAddedTodoItemTestData = true
+            CoreDataManager.shared.saveContext()
+        } else {
+            CoreDataManager.shared.fetchAllTodoItems { result in
+                switch result {
+                case .success(let todoItems):
+                    self.allTodoItems = todoItems
+                case .failure(let error):
+                    print("Error Fetching Todo Items: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
     // MARK: - Public API
