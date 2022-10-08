@@ -38,6 +38,9 @@ final class WelcomeCoordinator: Coordinator {
             welcomeViewController.viewModel = WelcomeViewModel(coordinator: self)
             window.rootViewController = welcomeViewController
             window.makeKeyAndVisible()
+            
+            // Persist that welcome view has displayed already
+            welcomeViewHasDisplayedAlready = true
         }
     }
     
