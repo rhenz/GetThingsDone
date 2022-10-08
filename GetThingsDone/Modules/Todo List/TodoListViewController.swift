@@ -136,6 +136,11 @@ extension TodoListViewController {
         tableView.register(GTDTableViewCell.self, forCellReuseIdentifier: GTDTableViewCell.cellIdentifier)
         backgroundView.addSubview(tableView)
     }
+    
+    private func reloadHeaderAndTableView() {
+        tableView.reloadData()
+        header.updateSubtitle()
+    }
 }
 
 // MARK: - Actions
@@ -191,7 +196,10 @@ extension TodoListViewController: GTDHeaderViewDelegate {
 // MARK: - GTDPopUpView Delegate
 extension TodoListViewController: GTDTodoPopUpViewDelegate {
     func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapAddButton addButton: UIButton, todoTextField textField: UITextField) {
-        
+        if let todo = textField.text {
+            viewModel.addTodo(todo)
+            reloadHeaderAndTableView()
+        }
     }
     
     func gtdTodoPopUpView(_ gtdTodoPopUpView: GTDTodoPopUpView, didTapCancelButton addButton: UIButton) {
@@ -265,10 +273,8 @@ extension TodoListViewController: GTDTableViewCellDelegate {
         // Reload table view
         tableView.isUserInteractionEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + CheckmarkView.animationDuration) {
-            self.tableView.reloadData()
-            self.header.updateSubtitle()
+            self.reloadHeaderAndTableView()
             self.tableView.isUserInteractionEnabled = true
         }
-        
     }
 }
