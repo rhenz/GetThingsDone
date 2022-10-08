@@ -101,6 +101,9 @@ extension GTDTodoPopUpView {
     
     @objc private func addButtonTapped(_ sender: UIButton) {
         delegate?.gtdTodoPopUpView(self, didTapAddButton: sender, todoTextField: textField)
+        
+        textField.text = ""
+        textFieldUpdate(textField)
     }
     
     @objc private func textFieldUpdate(_ sender: UITextField) {
