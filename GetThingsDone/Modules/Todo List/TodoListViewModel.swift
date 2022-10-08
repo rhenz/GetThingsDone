@@ -5,7 +5,7 @@
 //  Created by John Salvador on 10/8/22.
 //
 
-import Foundation
+import UIKit
 
 final class TodoListViewModel {
     
@@ -18,25 +18,13 @@ final class TodoListViewModel {
     
     // MARK: - Init
     init() {
-        // Check if test data has been added for the first time
-        // if not, check core data for any items
-        if !self.hasAddedTodoItemTestData {
-            allTodoItems = TodoItem.createTestData()
-            hasAddedTodoItemTestData = true
-            CoreDataManager.shared.saveContext()
-        } else {
-            CoreDataManager.shared.fetchAllTodoItems { result in
-                switch result {
-                case .success(let todoItems):
-                    self.allTodoItems = todoItems
-                case .failure(let error):
-                    print("Error Fetching Todo Items: \(error.localizedDescription)")
-                }
-            }
-        }
+        setupData()
+        addObservers()
     }
-    
-    // MARK: - Public API
+}
+
+// MARK: - Public API
+extension TodoListViewModel {
     var itemsLeftCount: Int {
         allTodoItems.filter { !$0.status }.count
     }
@@ -59,5 +47,40 @@ final class TodoListViewModel {
         let selectedTodo = doneTodos[index]
         let todoIndex = allTodoItems.firstIndex(of: selectedTodo)!
         allTodoItems[todoIndex].status.toggle()
+    }
+}
+
+// MARK: - Helper Methods
+extension TodoListViewModel {
+    private func setupData() {
+        // Check if test data has been added for the first time
+        // if not, check core data for any items
+        if !self.hasAddedTodoItemTestData {
+            allTodoItems = TodoItem.createTestData()
+            hasAddedTodoItemTestData = true
+            CoreDataManager.shared.saveContext()
+        } else {
+            CoreDataManager.shared.fetchAllTodoItems { result in
+                switch result {
+                case .success(let todoItems):
+                    self.allTodoItems = todoItems
+                case .failure(let error):
+                    print("Error Fetching Todo Items: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+    
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
+    }
+}
+
+// MARK: - Actions
+extension TodoListViewModel {
+    @objc private func appMovedToBackground() {
+        print("Save Data")
+        
+        CoreDataManager.shared.saveContext()
     }
 }
