@@ -48,6 +48,10 @@ extension TodoListViewModel {
         let todoIndex = allTodoItems.firstIndex(of: selectedTodo)!
         allTodoItems[todoIndex].status.toggle()
     }
+    
+    func addTodo(_ todo: String) {
+        allTodoItems.append(TodoItem(title: todo, status: false))
+    }
 }
 
 // MARK: - Helper Methods
