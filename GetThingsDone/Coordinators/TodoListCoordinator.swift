@@ -13,6 +13,8 @@ final class TodoListCoordinator: Coordinator {
     private(set) var childCoordinators: [Coordinator] = []
     private weak var welcomeViewController: WelcomeViewController?
     
+    var parentCoordinator: WelcomeCoordinator?
+    
     // MARK: - Init
     init(welcomeViewController: WelcomeViewController) {
         self.welcomeViewController = welcomeViewController
