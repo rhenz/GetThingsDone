@@ -11,7 +11,7 @@ import CoreData
 
 @objc(TodoItem)
 public class TodoItem: NSManagedObject {
-    convenience init(id: UUID = UUID(), title: String, status: Bool) {
+    convenience init(id: UUID = UUID(), title: String, status: Bool = false) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "TodoItem", in: context)!
         self.init(entity: entity, insertInto: context)
