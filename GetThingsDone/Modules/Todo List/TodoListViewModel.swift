@@ -83,8 +83,6 @@ extension TodoListViewModel {
 // MARK: - Actions
 extension TodoListViewModel {
     @objc private func appMovedToBackground() {
-        print("Save Data")
-        
         CoreDataManager.shared.saveContext()
     }
 }
